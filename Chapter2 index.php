@@ -248,11 +248,143 @@ if ('3abc' == '3'){
 }
 */
 
+/*
 $fruit = array('apple'=> 200, 'orange'=> 100, 'grape'=> 200);
 foreach ($fruit as $key => $value) {
 	echo $key.' is '.$value.'<br>';
 }
+*/
 
+/*
+$i = 1;
+
+while ($i < 10) {
+	echo '$i='.$i.' ';
+	$j = 1;
+	while($j < 10) {
+		echo 'j='.$j.' ';
+		echo 'i*j='.$i*$j.' ';
+		if($i*$j > 15) {
+			break 1;
+		}
+
+		$j += 1;
+	}
+	$i += 1;
+	echo '<br>';
+}
+*/
+
+/*
+function num($value1, $value2 = 100){
+	$value = $value1 + $value2;
+	return $value;
+}
+
+$result = num(200,300);
+echo $result;
+*/
+
+/*
+function breakfast(&$drink)
+{
+	$drink = 'ice coffee';
+}
+
+$string = 'hot coffee';
+breakfast($string);
+echo $string;
+*/
+
+/*
+function config(){
+
+$num = func_num_args();
+$args = func_get_args();
+
+$config = array();
+
+foreach ($args as $arg) {
+	$config[$arg[0]] = $arg[1];
+}
+
+echo 'num'.$num.'<br>';
+var_dump($config);
+}
+
+$config1 = array('1',100);
+$config2 = array('2',200);
+$config3 = array('3','ABC');
+
+config($config1,$config2,$config3);
+*/
+
+/*
+$a = 'Global $a';
+$b = 'Global $b';
+
+function test()
+{
+	$a = 'Local $a';
+	echo $a.'<br>';
+
+	global $b;
+	echo $b.'<br>';
+}
+
+test();
+echo $a.'<br>';
+echo $b;
+*/
+
+/*
+function counter()
+{
+	static $count = 0;
+	return ++$count;
+}
+
+echo counter().'<br>';
+echo counter().'<br>';
+echo counter().'<br>';
+*/
+
+/*
+var_dump(function_exists('counter'));
+*/
+
+/*
+function sales($string = '')
+{
+	$array = array('apple', 'orange', 'grape', 'pear', 'peach', 'mango');
+	if ($string){
+		return array($array,in_array($string, $array));
+	}else{
+		$result = '';
+	}
+	return array($array, $result);
+}
+
+list($list, ) = sales();
+echo 'fruit list'.'<br>';
+foreach ($list as $value) {
+	echo $value.'<br>';
+}
+echo '</p>';
+
+$result = sales('apple');
+var_dump($result[1]);
+echo 'Is apple in fruit list'.'<br>';
+
+if ($result[1] == true){
+	echo 'yes';
+}
+echo '</p>';
+*/
+
+/*
+trigger_error('E_USER_ERROR',E_USER_ERROR);
+*/
 
 ?>
 </body>
